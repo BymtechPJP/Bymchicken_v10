@@ -2,6 +2,10 @@
 // bymchicken_v10Dlg.h: 헤더 파일
 //
 
+#include "CPage1Dlg.h"
+#include "CPage2Dlg.h"
+#include "CPage3Dlg.h"
+
 #pragma once
 
 
@@ -22,6 +26,13 @@ public:
 
 
 // 구현입니다.
+
+private:
+	CPage1Dlg m_page1;
+	CPage2Dlg m_page2;
+	CPage3Dlg m_page3;
+	CTabCtrl* m_tab;
+
 protected:
 	HICON m_hIcon;
 

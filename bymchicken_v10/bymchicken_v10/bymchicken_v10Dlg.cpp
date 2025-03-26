@@ -8,6 +8,8 @@
 #include "bymchicken_v10Dlg.h"
 #include "afxdialogex.h"
 
+
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -31,6 +33,7 @@ void Cbymchickenv10Dlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(Cbymchickenv10Dlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_NOTIFY(TCN_SELCHANGE, IDC_TAB1, &Cbymchickenv10Dlg::OnTcnSelchangeTab1)
 END_MESSAGE_MAP()
 
 
@@ -46,6 +49,32 @@ BOOL Cbymchickenv10Dlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
+
+	// 탭 초기화
+	m_tab = (CTabCtrl*)GetDlgItem(IDC_TAB1);
+	m_tab->InsertItem(0, _T("첫 번째"));
+	m_tab->InsertItem(1, _T("두 번째"));
+	m_tab->InsertItem(2, _T("세 번째"));
+
+	// 각 페이지 다이얼로그 생성
+	m_page1.Create(IDD_DIALOG1, this);
+	m_page2.Create(IDD_DIALOG2, this);
+	m_page3.Create(IDD_DIALOG3, this);
+
+	// 위치 잡기
+	CRect tabRect;
+	m_tab->GetWindowRect(&tabRect);
+	ScreenToClient(&tabRect);
+	tabRect.top += 30; // 탭 바 높이 고려
+
+	m_page1.MoveWindow(&tabRect);
+	m_page2.MoveWindow(&tabRect);
+	m_page3.MoveWindow(&tabRect);
+
+	// 초기 페이지만 보이게
+	m_page1.ShowWindow(SW_SHOW);
+	m_page2.ShowWindow(SW_HIDE);
+	m_page3.ShowWindow(SW_HIDE);
 
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
@@ -86,3 +115,23 @@ HCURSOR Cbymchickenv10Dlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+void Cbymchickenv10Dlg::OnTcnSelchangeTab1(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	int sel = m_tab->GetCurSel();
+
+	// 모두 숨기고 선택된 것만 보이게
+	m_page1.ShowWindow(SW_HIDE);
+	m_page2.ShowWindow(SW_HIDE);
+	m_page3.ShowWindow(SW_HIDE);
+
+	switch (sel)
+	{
+	case 0: m_page1.ShowWindow(SW_SHOW); break;
+	case 1: m_page2.ShowWindow(SW_SHOW); break;
+	case 2: m_page3.ShowWindow(SW_SHOW); break;
+	}
+
+	*pResult = 0;
+}
