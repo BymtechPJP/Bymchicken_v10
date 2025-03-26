@@ -62,8 +62,8 @@ BOOL Cbymchickenv10Dlg::OnInitDialog()
 	// 탭 초기화
 	m_tab = (CTabCtrl*)GetDlgItem(IDC_TAB1);
 	m_tab->MoveWindow(112, 40, 800, 600);
-	m_tab->InsertItem(0, _T("자동"));
-	m_tab->InsertItem(1, _T("수동"));
+	m_tab->InsertItem(0, _T("수동"));
+	m_tab->InsertItem(1, _T("자동"));
 	m_tab->InsertItem(2, _T("설정"));
 
 	// 위치 잡기

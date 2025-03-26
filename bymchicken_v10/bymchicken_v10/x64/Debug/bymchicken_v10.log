@@ -1,4 +1,4 @@
-﻿빌드 시작: 2025-03-26 오후 5:29:24
+﻿빌드 시작: 2025-03-26 오후 6:07:26
      1>2 노드의 "D:\BymChicken_PJP\bymchicken_v10\bymchicken_v10\bymchicken_v10.vcxproj" 프로젝트(Build 대상)입니다.
      1>InitializeBuildStatus:
          "AlwaysCreate"이(가) 지정되었기 때문에 "x64\Debug\bymchicken_v10.tlog\unsuccessfulbuild"을(를) 만들고 있습니다.
@@ -31,4 +31,4 @@
     경고 0개
     오류 0개
 
-경과 시간: 00:00:01.31
+경과 시간: 00:00:01.46
