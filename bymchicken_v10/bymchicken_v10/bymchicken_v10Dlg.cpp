@@ -50,22 +50,36 @@ BOOL Cbymchickenv10Dlg::OnInitDialog()
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
 
+	// 윈도우 크기 설정
+	CRect dlgRect;
+	dlgRect.left = 0;
+	dlgRect.top = 0;
+	dlgRect.right = dlgRect.left + 1024;  // 너비 px 설정
+	dlgRect.bottom = dlgRect.top + 768;  // 높이 px 설정
+
+	MoveWindow(&dlgRect);
+
 	// 탭 초기화
 	m_tab = (CTabCtrl*)GetDlgItem(IDC_TAB1);
-	m_tab->InsertItem(0, _T("첫 번째"));
-	m_tab->InsertItem(1, _T("두 번째"));
-	m_tab->InsertItem(2, _T("세 번째"));
+	m_tab->MoveWindow(112, 40, 800, 600);
+	m_tab->InsertItem(0, _T("자동"));
+	m_tab->InsertItem(1, _T("수동"));
+	m_tab->InsertItem(2, _T("설정"));
 
-	// 각 페이지 다이얼로그 생성
+	// 위치 잡기
+	CRect tabRect, itemRect;
+	m_tab->GetWindowRect(&tabRect);
+	ScreenToClient(&tabRect);
+
+	m_tab->GetItemRect(0, &itemRect); // 첫 번째 탭의 높이 계산
+	tabRect.top += itemRect.Height() + 5;
+	tabRect.left += 4;
+	tabRect.right -= 4;
+	tabRect.bottom -= 4;
+
 	m_page1.Create(IDD_DIALOG1, this);
 	m_page2.Create(IDD_DIALOG2, this);
 	m_page3.Create(IDD_DIALOG3, this);
-
-	// 위치 잡기
-	CRect tabRect;
-	m_tab->GetWindowRect(&tabRect);
-	ScreenToClient(&tabRect);
-	tabRect.top += 30; // 탭 바 높이 고려
 
 	m_page1.MoveWindow(&tabRect);
 	m_page2.MoveWindow(&tabRect);
@@ -73,8 +87,13 @@ BOOL Cbymchickenv10Dlg::OnInitDialog()
 
 	// 초기 페이지만 보이게
 	m_page1.ShowWindow(SW_SHOW);
+	m_page1.SetDlgItemText(IDC_EDIT1, _T("자동 탭이 눌렸습니다"));
 	m_page2.ShowWindow(SW_HIDE);
 	m_page3.ShowWindow(SW_HIDE);
+
+
+
+	m_tab->Invalidate();
 
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
@@ -128,9 +147,24 @@ void Cbymchickenv10Dlg::OnTcnSelchangeTab1(NMHDR *pNMHDR, LRESULT *pResult)
 
 	switch (sel)
 	{
-	case 0: m_page1.ShowWindow(SW_SHOW); break;
-	case 1: m_page2.ShowWindow(SW_SHOW); break;
-	case 2: m_page3.ShowWindow(SW_SHOW); break;
+		case 0:
+		{
+			m_page1.ShowWindow(SW_SHOW);
+			m_page1.SetDlgItemText(IDC_EDIT1, _T("자동 탭이 눌렸습니다"));
+			break;
+		}
+		case 1:
+		{
+			m_page2.ShowWindow(SW_SHOW);
+			m_page2.SetDlgItemText(IDC_EDIT1, _T("수동 탭이 눌렸습니다"));
+			break;
+		}
+		case 2:
+		{
+			m_page3.ShowWindow(SW_SHOW);
+			m_page3.SetDlgItemText(IDC_EDIT1, _T("설정 탭이 눌렸습니다"));
+			break;
+		}
 	}
 
 	*pResult = 0;

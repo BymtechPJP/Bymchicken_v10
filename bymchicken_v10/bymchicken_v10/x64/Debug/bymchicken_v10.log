@@ -1,17 +1,34 @@
-﻿빌드 시작: 2025-03-26 오후 2:21:29
+﻿빌드 시작: 2025-03-26 오후 5:29:24
      1>2 노드의 "D:\BymChicken_PJP\bymchicken_v10\bymchicken_v10\bymchicken_v10.vcxproj" 프로젝트(Build 대상)입니다.
      1>InitializeBuildStatus:
-         "x64\Debug\bymchicken_v10.tlog\unsuccessfulbuild"에 연결(touching)하고 있습니다.
-     1>C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets(314,5): error MSB6003: 지정한 작업 실행 파일 "CL.exe"을(를) 실행할 수 없습니다. 'D:\BYMCHICKEN_PJP\BYMCHICKEN_V10\BYMCHICKEN_V10\X64\DEBUG\BYMCHICKEN_V10.PCH' 파일은 다른 프로세스에서 사용 중이므로 프로세스에서 액세스할 수 없습니다.
-     1>"D:\BymChicken_PJP\bymchicken_v10\bymchicken_v10\bymchicken_v10.vcxproj" 프로젝트를 빌드했습니다(Build 대상). - 실패
+         "AlwaysCreate"이(가) 지정되었기 때문에 "x64\Debug\bymchicken_v10.tlog\unsuccessfulbuild"을(를) 만들고 있습니다.
+       ClCompile:
+         모든 출력이 최신 상태입니다.
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\bin\HostX86\x64\CL.exe /c /ZI /JMC /nologo /W3 /WX- /diagnostics:classic /sdl /Od /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"pch.h" /Fp"x64\Debug\bymchicken_v10.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc141.pdb" /Gd /TP /FC /errorReport:prompt CPage1Dlg.cpp CPage2Dlg.cpp CPage3Dlg.cpp bymchicken_v10.cpp bymchicken_v10Dlg.cpp
+         CPage1Dlg.cpp
+         CPage2Dlg.cpp
+         CPage3Dlg.cpp
+         bymchicken_v10.cpp
+         bymchicken_v10Dlg.cpp
+         코드를 생성하고 있습니다...
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x86\rc.exe /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /l"0x0412" /Ix64\Debug\ /nologo /fo"x64\Debug\bymchickenv10.res" bymchickenv10.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\bin\HostX86\x64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\BymChicken_PJP\bymchicken_v10\x64\Debug\bymchicken_v10.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\Include\Manifest\dpiaware.manifest" /DEBUG:FASTLINK /PDB:"D:\BymChicken_PJP\bymchicken_v10\x64\Debug\bymchicken_v10.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\BymChicken_PJP\bymchicken_v10\x64\Debug\bymchicken_v10.lib" /MACHINE:X64 x64\Debug\bymchickenv10.res
+         x64\Debug\bymchicken_v10.obj
+         x64\Debug\bymchicken_v10Dlg.obj
+         x64\Debug\CPage1Dlg.obj
+         x64\Debug\CPage2Dlg.obj
+         x64\Debug\CPage3Dlg.obj
+         x64\Debug\pch.obj
+         bymchicken_v10.vcxproj -> D:\BymChicken_PJP\bymchicken_v10\x64\Debug\bymchicken_v10.exe
+       FinalizeBuildStatus:
+         "x64\Debug\bymchicken_v10.tlog\unsuccessfulbuild" 파일을 삭제하고 있습니다.
+         "x64\Debug\bymchicken_v10.tlog\bymchicken_v10.lastbuildstate"에 연결(touching)하고 있습니다.
+     1>"D:\BymChicken_PJP\bymchicken_v10\bymchicken_v10\bymchicken_v10.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
 
-빌드하지 못했습니다.
-
-       "D:\BymChicken_PJP\bymchicken_v10\bymchicken_v10\bymchicken_v10.vcxproj"(Build 대상)(1) ->
-       (ClCompile 대상) -> 
-         C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets(314,5): error MSB6003: 지정한 작업 실행 파일 "CL.exe"을(를) 실행할 수 없습니다. 'D:\BYMCHICKEN_PJP\BYMCHICKEN_V10\BYMCHICKEN_V10\X64\DEBUG\BYMCHICKEN_V10.PCH' 파일은 다른 프로세스에서 사용 중이므로 프로세스에서 액세스할 수 없습니다.
-
+빌드했습니다.
     경고 0개
-    오류 1개
+    오류 0개
 
-경과 시간: 00:00:00.01
+경과 시간: 00:00:01.31
