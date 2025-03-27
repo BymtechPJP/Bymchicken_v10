@@ -87,7 +87,7 @@ BOOL Cbymchickenv10Dlg::OnInitDialog()
 
 	// 초기 페이지만 보이게
 	m_page1.ShowWindow(SW_SHOW);
-	m_page1.SetDlgItemText(IDC_EDIT1, _T("자동 탭이 눌렸습니다"));
+	m_page1.SetDlgItemText(IDC_EDIT1, _T("수동 탭이 눌렸습니다"));
 	m_page2.ShowWindow(SW_HIDE);
 	m_page3.ShowWindow(SW_HIDE);
 
@@ -150,13 +150,13 @@ void Cbymchickenv10Dlg::OnTcnSelchangeTab1(NMHDR *pNMHDR, LRESULT *pResult)
 		case 0:
 		{
 			m_page1.ShowWindow(SW_SHOW);
-			m_page1.SetDlgItemText(IDC_EDIT1, _T("자동 탭이 눌렸습니다"));
+			m_page1.SetDlgItemText(IDC_EDIT1, _T("수동 탭이 눌렸습니다"));
 			break;
 		}
 		case 1:
 		{
 			m_page2.ShowWindow(SW_SHOW);
-			m_page2.SetDlgItemText(IDC_EDIT1, _T("수동 탭이 눌렸습니다"));
+			m_page2.SetDlgItemText(IDC_EDIT1, _T("자동 탭이 눌렸습니다"));
 			break;
 		}
 		case 2:
